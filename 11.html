@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Pregunta 11</title>
+    <script type="text/javascript" src="jquery-3.5.1.min.js" ></script>
+</head>
+<body>
+    <h3>You are developing an HTML5 web application that displays the current temperature whenever a button is
+        clicked. The following code provides this functionality.</h3>
+
+        <p>When the temperature is loaded, the status property on the loader instance does not change.<br/>
+            You need to ensure that the status property on the loader instance is updated when the temperature is
+            loaded.<br/>
+            Which code segment should you use to replace the Loader function?</p><br/>
+
+    <script>
+        //function Loader() {
+            //this.status = "ready";
+            //this.temp = 50;
+            //this.updateStatus = function (newStatus) {
+                //status = newStatus;
+            //};
+        //}
+        
+
+        function Loader () {
+            this.status = "ready";
+            this.temp = 50;
+            this.updateStatus = function (newStatus) {
+                this.status = newStatus;
+            };
+        } // CORRECTO: faltaba el "this" en la última linea
+
+        function loadTemp()
+        {
+            return 32;
+        }
+
+        var loader = new Loader();
+
+        $(function () {
+            $("#loadTemp").click(function (eventData) {
+                loader.temp = loadTemp();
+                loader.updateStatus("done");
+            });
+        });
+
+
+
+        //function Loader () {
+            //this.prototype.status = "ready";
+            //this.temp = 50;
+            //this.updatestatus = function (newStatus) {
+                //this.status = newStatus;
+            //};
+        //} INCORRECTO: sobra el "prototype"
+
+        //function Loader () {
+            //status = "ready";
+            //this.temp = 50;
+            //this.updateStatus = function (newStatus) {
+                //status = newStatus;
+            //};
+        //} INCORRECTO: falta el "this" en la segunda y quinta linea.
+
+        //function Loader () {
+            //window.status = "ready";
+            //this.temp = 50;
+            //this.updateStatus = function (newStatus) {
+                //status = newStatus;
+            //}
+        //} INCORRECTO: falta el "this" en la segunda y quinta linea y sobra "window"
+
+
+
+    </script>
+    <!-- <button id="loadTemp" onclick="Loader()">Prueba de Loader</button> -->
+    <button id="loadTemp"> Prueba de Loader</button> 
+
+</body>
+</html>

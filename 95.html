@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 95</title>
+</head>
+<body>
+    <h3>You have the following code. The web service returns a JSON object that contains two properties named Description and FileName.
+        The PersonImage object must meet the following requirements: <br>
+
+        Create an object that represents an image that will be displayed <br> 
+        Set the image properties from the values that are returned by the web service <br> 
+        Expose the image as a property of the PersonImage object <br> 
+
+        You need to insert code at line 13 to complete the implementation of the PersonImage object.<br> 
+        Which three code blocks should you use to develop the solution? To answer, move the appropriate code 
+        blocks from the list of code blocks to the answer area and arrange them in the correct order.<br> 
+
+    </h3>
+
+    $(document).ready(function () {
+        $(`#submit´).click(function () {
+            $.getJSON({
+                url: "url/GetImage",
+                success: function (result) {
+                    var personImage = new PersonImage(result) ;
+                    $("#happy").html(personImage.img) ;
+                }
+            });
+        });
+    });
+    function PersonImage (image) { //CORRECT ANSWER
+        this.img = document.createElement('img');
+        img.alt = image.Descriptcion;
+        img.src = image.FileName;
+        return this.img;
+    }
+
+        //OTHER CODE SEGMENTS
+        //this.img.Description = image.Description;
+        //this.img.FileName = imge.FileName;
+
+        //this.img = img;
+        
+        //return this.toHTMLImage();
+
+        //this.image = new document.images();
+
+        //var img = document.createElement('img');
+    
+
+</body>
+</html>

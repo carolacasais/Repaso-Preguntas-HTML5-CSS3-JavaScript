@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 27</title>
+</head>
+<body>
+    <h3>You are developing an HTML5 web application that displays customer mailing address information.
+        The application loads addresses from a web service by using AJAX. The following code defines a Customer
+        object and loads address data.</h3>
+
+        <script>
+            function Customer(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.address = "";
+            }
+
+            Customer.prototype.parseAddress = function (data) {
+                this.address = data.address;
+            }
+
+            Customer.prototype.loadAddress = function () {
+                //$.get('data.xml', function (data) {
+                    //function (scope) {
+                        //scope.parseAddress(data);
+                    //}) (data);
+                //}); // INCORRECTO
+
+                //$.get('data.xml', function (data, innerScope) {
+                    //innerScope.parseAddress(data);
+                //}); //INCORRECTO
+
+                var customer = this;
+                $.get('data.xml', function (data) {
+                    customer.parseAddress(data);
+                }); // CORRECTO !! 
+
+                //$.get('data.xml, function (data) {
+                    //this.parseAddress(data);
+                //}); //INCORRECTO
+                }
+
+        </script>
+    
+</body>
+</html> 
