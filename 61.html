@@ -10,41 +10,41 @@
         You need to prevent users from submitting form data more than once.<br>
         Which code segment should you use?</h3>
 
-        <body>
+        
         <input id="btnSubmit" type="button" value="Submit" onclick="disable(this)" />
         <script>
             function disable(ctrl) {
-                ctrl disable = true;
+                ctrl.disable = true;
             }
         </script>
-        </body> // CORRECTO 
+         // CORRECTO 
 
-        <body>
-            <input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
-            <script>
-                function disable() {
-                    this.disabled = true;
-                }
-            </script>
-        </body>
+        //<body>
+            //<input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
+            //<script>
+                //function disable() {
+                    //this.disabled = true;
+                //}
+            //</script>
+        //</body>
 
-        <body>
-            <input id="btnSubmit" type="button" value="Submit" onclick="disable(me)" />
-            <script>
-                function disable(ctrl) {
-                    crtl.disable = true;
-                }
-            </script>
-        </body> 
+        //<body>
+            //<input id="btnSubmit" type="button" value="Submit" onclick="disable(me)" />
+            //<script>
+                //function disable(ctrl) {
+                    //crtl.disable = true;
+                //}
+            //</script>
+        //</body> 
 
-        <body>
-            <input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
-            <script>
-                function disable() {
-                    document.getElementById("btn" + this.name).disabled = true;
-                }
-            </script>
-        </body>
+        //<body>
+            //<input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
+            //<script>
+                //function disable() {
+                    //document.getElementById("btn" + this.name).disabled = true;
+                //}
+            //</script>
+        //</body>
 
 </body>
 </html>
