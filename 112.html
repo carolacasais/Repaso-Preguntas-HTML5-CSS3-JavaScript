@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 112</title>
+    <script type="text/javascript" src="jquery-3.5.1.min.js" ></script>
 </head>
 <body>
     <h1>DRAG DROP</h1>
@@ -26,5 +27,14 @@ NOTE: Each correct selection is worth one point. <br/>
                 event.preventDefault();
             });
         </form>
+
+        <p>El resultado es var myValue = $(this).serializeArray();<br/>
+            El método serializeArray() crea un arreglo de objetos de nombre y valor serializando los valores.<br/>
+            Se pueden seleccionar uno o mas elementos o el elemento "form" en si mismo.<br/>
+            La estructura es: $(selector).serializeArray()<br/>
+
+            Enlace de utilidad: https://www.w3schools.com/jquery/ajax_serializearray.asp
+
+            </p>
 </body>
 </html>
