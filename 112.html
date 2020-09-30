@@ -7,9 +7,24 @@
 </head>
 <body>
     <h1>DRAG DROP</h1>
-    <h3>You have the following markup. 
+    <h3>You have the following markup. <br/>
         During the form submission, you need to access an array that contains the value of the "a" field and the
-value of the "b" field.
+value of the "b" field.<br/>
+How should you complete the code? To answer, drag the appropriate code elements to the correct targets.<br/>
+Each code element may be used once, more than once, or not at all. You may need to drag the split bar 
+between panes or scroll to view content. <br/>
+NOTE: Each correct selection is worth one point. <br/>
     </h3>
+
+        <form>
+            <div><input type="text" name="a" value="1" id="a"></div>
+            <div><input type="text" name="b" value="2" id="a"></div>
+            <input type="submit" value="Submit">
+
+            $("form").submit(function (event) {
+                var myValue = $ (this).serializeArray(); // este es el resultado. 
+                event.preventDefault();
+            });
+        </form>
 </body>
 </html>
