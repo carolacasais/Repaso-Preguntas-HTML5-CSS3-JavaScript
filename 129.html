@@ -10,13 +10,25 @@
         included for reference only.)<br/>
         You need to ensure that the values that users enter are only numbers, letters, and underscores, regardless
         of the order<br/>
-        O sea, hay que completar las funcion removeInvalid. <br/>
+        Hay que completar las funcion removeInvalid. <br/>
         </h3>
-
+    <xmp>
         <head>
             <script>
                 function removeInvalid(input) {
+                A. if(!/^[A-Za-z0-0_]+$/.test(input.value))
+                input.value = "Invalid";
 
+                B. var regEx = "[\S]";
+                if (!input.value.match(regEx))
+                input.value = "Invlaid";
+
+                C. if (!/[^A-Za-z0-0_]/.test(input.value))
+                input.value = "Invalid";
+
+                D. var regEx = "[\w\d]";
+                if (!input.value.match(regEx))
+                input.value = "Invalid";
                 }
             </script>
         </head>
@@ -24,6 +36,20 @@
             Given Name: <input type="text" id="GivenName" onblur="removeInvalid(this);"/>
             Surname: <input type="text" id="Surname" onblur="removeInvalid(this);"/>
         </body>
+    </xmp>
+    <head>
+        <script>
+            function removeInvalid(input) {
+            if(!/^[A-Za-z0-0_]+$/.test(input.value))
+            input.value = "Invalid";
+            }
+
+        </script>
+    </head>
+    <body>
+        Given Name: <input type="text" id="GivenName" onblur="removeInvalid(this);"/>
+        Surname: <input type="text" id="Surname" onblur="removeInvalid(this);"/>
+    </body>
 
 </body>
 </html>
