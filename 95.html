@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 95</title>
+    <script type="text/javascript" src="jquery-3.5.1.min.js" ></script>
 </head>
 <body>
     <h3>You have the following code. The web service returns a JSON object that contains two properties named Description and FileName.
@@ -16,9 +17,9 @@
         You need to insert code at line 13 to complete the implementation of the PersonImage object.<br> 
         Which three code blocks should you use to develop the solution? To answer, move the appropriate code 
         blocks from the list of code blocks to the answer area and arrange them in the correct order.<br> 
-
     </h3>
-
+    
+    <xmp>
     $(document).ready(function () {
         $(`#submit´).click(function () {
             $.getJSON({
@@ -37,18 +38,37 @@
         return this.img;
     }
 
-        //OTHER CODE SEGMENTS
-        //this.img.Description = image.Description;
-        //this.img.FileName = imge.FileName;
+        OTHER CODE SEGMENTS
+        this.img.Description = image.Description;
+        this.img.FileName = imge.FileName;
 
-        //this.img = img;
+        this.img = img;
         
-        //return this.toHTMLImage();
+        return this.toHTMLImage();
 
-        //this.image = new document.images();
+        this.image = new document.images();
 
-        //var img = document.createElement('img');
-    
+        var img = document.createElement('img');
+    </xmp>
+    <script>
+    $(document).ready(function () {
+        $(`#submit´).click(function () {
+            $.getJSON({
+                url: "url/GetImage",
+                success: function (result) {
+                    var personImage = new PersonImage(result) ;
+                    $("#happy").html(personImage.img) ;
+                }
+            });
+        });
+    });
+    function PersonImage (image) { //CORRECT ANSWER
+        this.img = document.createElement('img');
+        img.alt = image.Descriptcion;
+        img.src = image.FileName;
+        return this.img;
+    }
+    </script>
 
 </body>
 </html>
