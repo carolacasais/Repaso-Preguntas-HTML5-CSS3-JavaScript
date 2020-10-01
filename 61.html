@@ -10,14 +10,57 @@
         You need to prevent users from submitting form data more than once.<br>
         Which code segment should you use?</h3>
 
-        
-        <input id="btnSubmit" type="button" value="Submit" onclick="disable(this)" />
+        <xmp>
+            <input id="btnSubmit" type="button" value="Submit" onclick="disable(this)" />
         <script>
             function disable(ctrl) {
                 ctrl.disable = true;
             }
         </script>
          // CORRECTO 
+
+        <body>
+            <input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
+            <script>
+                function disable() {
+                    this.disabled = true;
+                }
+            </script>
+        </body>
+
+        <body>
+            <input id="btnSubmit" type="button" value="Submit" onclick="disable(me)" />
+            <script>
+                function disable(ctrl) {
+                    crtl.disable = true;
+                }
+            </script>
+        </body> 
+
+        <body>
+            <input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
+            <script>
+                function disable() {
+                    document.getElementById("btn" + this.name).disabled = true;
+                }
+            </script>
+        </body>
+        </xmp>
+
+        
+        <input id="btnSubmit" type="button" value="Submit" onclick="disable(this)" />
+        <script>
+            function disable(ctrl) {
+                ctrl.disable = true;
+            }
+
+            <button id="btnSubmit" onclick="disable()">Prueba de botón</button> // ESTO LO PUSE PARA PROBAR SI FUNCIONA
+            <button id="btnSubmit"> Prueba de botón</button> // ESTO LO PUSE PARA PROBAR SI FUNCIONA
+
+        </script>
+         // CORRECTO 
+
+        
 
         //<body>
             //<input id="btnSubmit" type="button" value="Submit" onclick="disable()" />
@@ -45,6 +88,17 @@
                 //}
             //</script>
         //</body>
+
+        <p>RESPUESTA CORRECTA: A</p>
+        <p>this, in disable(this), refers to the clicked button<br/>
+            The disabled attribute is a boolean attribute<br/>
+            When present, it specifies that the input element should be disabled<br/>
+            A disabled input element is unusable and un-clickable<br/>
+            The disabled attribute can be set to keep a user from using the input element until some other condition
+has been met (like selecting a checkbox, etc.). Then, a JavaScript could remove the disabled value, and
+make the input element usable<br/>
+        </p>
+        <p>ENLACE DE REFERECIA: https://www.w3schools.com/TAGS/att_input_disabled.asp</p>
 
 </body>
 </html>
