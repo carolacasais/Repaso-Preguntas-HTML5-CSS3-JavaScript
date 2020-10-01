@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 282</title>
+</head>
+<body>
+    <h3>DRAG DROP<br/>
+        You have a web API that responds to a GET request and returns a JSON object in the form of
+<xmp>{ “FirstName”: “Ben”, “Lastname”: “Smith” }.</xmp> You need to create a page by using JavaScript. The page must contain a button that requests the JSON
+data. The data must be displayed in a p tag that has an id of person. <br/>
+How should you complete the JavaScript code? To answer, drag the appropriate values to the correct
+targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar
+between panes or scroll to view content.<br/>
+NOTE: Each correct selection is worth one point.</h3><br/>
+
+<xmp>
+    <!DOCTYPE html>
+    <html>
+        <body>
+            <button type="button" onclick="getPerson()">get Person</button>
+            <br/>
+            <p id="person"></p>
+            <script>
+                function getPerson() {
+                    var var1 = new value() //PRIMERA RESPUESTA: XMLHttpRequest
+                    var1.open("GET"."/api/person".true)
+                    var1.responseType = "json"; //SEGUNDA RESPUESTA: json
+                    var1.onload = function(e) {
+                        var firstName = var1.response.FirstName;
+                        var lastName = var1.respnse.lastName;
+                        document.querySelector("#person").textContent =
+                        "Mr." + firstName + " " + lastName;
+                    };
+                    var1.send
+                }
+            </script>
+        </body>
+    </html>
+</xmp>
+
+<p>RESPUESTA CORRECTA>: XMLHttpRequest y json , ya que es la estructura para solicitar información a un servidor externo 
+    en la queremos que nos la devuelva en formato JSON. </p>
+<p>ENLACE REFERENCIA: https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest</p>
+
+
+</body>
+</html>
