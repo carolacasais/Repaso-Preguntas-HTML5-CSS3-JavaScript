@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 299</title>
+    <style>
+        #main {
+            width: 180px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+        }
+        #main div:nth-child(even) {
+            order: 1;
+        }
+    </style>
 </head>
 <body>
     <h3>
@@ -39,21 +50,6 @@ Each code element may be used once, more than once, or not at all. You may need 
 between panes or scroll to view content.<br/>
 NOTE: Each correct selection is worth one point<br/>
     </h4>
-
-    Target1: nth-child
-    Target2: order
-
-    <style>
-        #main {
-            width: 180px;
-            height: 150px;
-            border: 1px solid black;
-            display: flex;
-        }
-        #main div: Target 1 (even) {
-            Target 2: 1;
-        }
-    </style>
 
     <div id="main">
         <div>1</div>
