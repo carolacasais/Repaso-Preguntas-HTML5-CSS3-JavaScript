@@ -5,42 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 112</title>
     <script type="text/javascript" src="jquery-3.5.1.min.js" ></script>
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                alert("hello");
+                console.log(event);
+                var myValue = $(this).serializeArray(); // este es el resultado. 
+                $.each(myValue, function (i, field) {
+                    $("#results").append(field.name + ":" + field.value + " ");
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
 </head>
 <body>
     <h3>DRAG DROP</h3>
-    <h3>You have the following markup. <br/>
-        During the form submission, you need to access an array that contains the value of the "a" field and the
+    <h4>You have the following markup.</h4>
+        <xmp>
+            <form>
+                <div><input type="text" name="a" value="1" id="a"></div>
+                <div><input type="text" name="b" value="2" id="a"></div>
+                <input type="submit" value="Submit">
+            </form>
+        </xmp>
+
+        <h4>During the form submission, you need to access an array that contains the value of the "a" field and the
 value of the "b" field.<br/>
-How should you complete the code? To answer, drag the appropriate code elements to the correct targets.<br/>
+<xmp>
+    $("form").submit(function (event) {
+        var myValue = $ (this).serializeArray(); // este es el resultado. 
+        event.preventDefault();
+    });
+</xmp>
+</h4>
+<h4>How should you complete the code? To answer, drag the appropriate code elements to the correct targets.<br/>
 Each code element may be used once, more than once, or not at all. You may need to drag the split bar 
 between panes or scroll to view content. <br/>
 NOTE: Each correct selection is worth one point. <br/>
-    </h3>
-    <xmp>
-        <form>
-            <div><input type="text" name="a" value="1" id="a"></div>
-            <div><input type="text" name="b" value="2" id="a"></div>
-            <input type="submit" value="Submit">
-        </form>
-
-            $("form").submit(function (event) {
-                var myValue = $ (this).serializeArray(); // este es el resultado. 
-                event.preventDefault();
-            });
-        
-    </xmp>
-
-    <form>
-        <div><input type="text" name="a" value="1" id="a"></div>
-        <div><input type="text" name="b" value="2" id="a"></div>
-        <input type="submit" value="Submit">
-    </form>
-
-        $("form").submit(function (event) {
-            var myValue = $ (this).serializeArray(); // este es el resultado. 
-            event.preventDefault();
-        });
-
+</h4>
+    
+<form>
+    <div><input type="text" name="a" value="1" id="a"></div>
+    <div><input type="text" name="b" value="2" id="b"></div>
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+<div id="results"></div>
 
         <p>RESULTADO CORRECTO: Es var myValue = $(this).serializeArray();<br/>
             El método serializeArray() crea un arreglo de objetos de nombre y valor serializando los valores.<br/>
