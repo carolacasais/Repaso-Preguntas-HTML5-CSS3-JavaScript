@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 214</title>
+    <style>
+        .Box {
+        background: rgb(255,0,0);
+        opacity : 0.5;
+    }
+    </style>
 </head>
 <body>
-    <h3>You are styling the following DIV tag on a page by using CSS3.<br>
-        You need to set the transparency of the object to 50%.<br>
+    <h3>You are styling the following DIV tag on a page by using CSS3.</h3>
+        <xmp>
+            <div class="Box"/>
+        </xmp>
+        <h4>You need to set the transparency of the object to 50%.<br>
         Which two CSS3 styles will achieve the goal? (Each correct answer presents a complete solution. Choose
-two.)<br>
-    </h3>
-
+two.)</h4>
+    
+    <xmp>
     .Box {
         background: rgb(255,0,0);
         opacity : 0.5;
@@ -30,6 +39,16 @@ two.)<br>
     .Box {
         background rgba (255,0,0,.5);
     }
+    </xmp>
+
+    <div class="Box">
+        <p>This is some text that is placed in the transparent box.</p>
+    </div>
+
+    <p>RESPUESTA CORRESTA: AD</p>
+    <p>ENLACES REFERENCIA: <br/>
+        https://www.w3schools.com/cssref/pr_background-color.asp <br/>
+        https://www.w3schools.com/css/css_image_transparency.asp</p>
 
 </body>
 </html>
