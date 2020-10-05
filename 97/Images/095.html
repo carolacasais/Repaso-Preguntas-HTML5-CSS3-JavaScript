@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q095</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //alert($("#happy").html());
+            $('#submit').click(function () {
+                $.getJSON({
+                    url: "http://localhost:36025/Images.asmx/GetImage",
+                    success: function (result) {
+                        //var $personImage = new PersonImage(result);
+                        var personImage = new PersonImage(result);
+                        $("#happy").html(personImage.img);
+                        //$("#happy").html(personImage);
+                        //$("#happy").html($personImage);
+
+                    }
+                });
+            });
+        });
+        function PersonImage(image) { //CORRECT ANSWER
+            this.img = document.createElement('img');
+            this.img.alt = image.Descriptcion; //la opción de SOLO img es invalida
+            this.img.src = image.FileName;     //la opcion de SOLO img es invalida
+            return this;
+            //return this.img;
+        }
+    </script>
+
+</head>
+<body>
+    <button id="submit">Cargar</button>
+    <p>Resultado de la carga:</p>
+    <div id="happy"></div>
+</body>
+</html>
