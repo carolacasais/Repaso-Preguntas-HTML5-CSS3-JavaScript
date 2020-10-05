@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 282</title>
+    <script>
+        function getPerson() {
+            var var1 = new value() //PRIMERA RESPUESTA: XMLHttpRequest
+            var1.open("GET"."/api/person".true)
+            var1.responseType = "json"; //SEGUNDA RESPUESTA: json
+            var1.onload = function(e) {
+                var firstName = var1.response.FirstName;
+                var lastName = var1.respnse.lastName;
+                document.querySelector("#person").textContent =
+                "Mr." + firstName + " " + lastName;
+            };
+            var1.send
+        }
+    </script>
 </head>
 <body>
     <h3>DRAG DROP<br/>
@@ -39,6 +53,13 @@ NOTE: Each correct selection is worth one point.</h3><br/>
         </body>
     </html>
 </xmp>
+<form>
+    <div><input type="text" name="a" value="1" id="a"></div>
+    <div><input type="text" name="b" value="2" id="b"></div>
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+<div id="results"></div>
 
 <p>RESPUESTA CORRECTA>: XMLHttpRequest y json , ya que es la estructura para solicitar información a un servidor externo 
     en la queremos que nos la devuelva en formato JSON. </p>
