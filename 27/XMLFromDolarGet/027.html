@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Question 027</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/opcionA.js"></script>
+    <script src="src/opcionB.js"></script>
+    <script src="src/opcionC.js"></script>
+    <script src="src/opcionD.js"></script>
+</head>
+<body>
+    <xmp>
+
+        Pregunta 027.:
+
+        You are developing an HTML5 web application that displays customer mailing address information.<br />
+        The application loads addresses from a web service by using AJAX.<br />
+        The following code defines a Customer
+        object and loads address data.
+
+
+        function Customer(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = "";
+        }
+
+        Customer.prototype.parseAddress = function (data) {
+        this.address = data.address;
+        }
+
+
+        Customer.prototype.loadAddress = function () {
+        }
+
+        You need to implement the loadAddress function:
+
+        A) Customer.prototype.loadAddress = function () {
+        $.get('data.xml', function (data) {
+        (function (scope) {
+        scope.parseAddress(data);
+        })(data);
+        });
+
+        B) Customer.prototype.loadAddress = function () {
+        $.get('data.xml', function (data, innerScope) {
+        innerScope.parseAddress(data);
+        })
+
+        C)  Customer.prototype.loadAddress = function () {
+        var customer = this;
+        $.get('data.xml', function (data) {
+        customer.parseAddress(data);
+        })
+
+        D) Customer.prototype.loadAddress = function () {
+        $.get('data', function (data) {
+        this.parseAddress(data);
+        })
+
+        Fuentes consultads:
+
+        //https://stackoverflow.com/questions/30778002/extract-xml-data-from-ajax-result
+
+        OpCION A) *** INCORRECTA el argumento "scope" recibe los datos del webservice y es un objeto pero no tiene una metodo parseAddress
+
+        OPCION B) *** INCORRECTA el segundo argumento "innerScope" recibe es estado de la llamada al webservice y no tiene un metodo parseAddress
+
+        OPCION C) *** CORRECTA antes de llamar el metodo "$.get(url,function(data))" se inicializa una variable con this que es objeto Customer
+        por eso al recibir la respuesta del webservice con los datos, estos pueden ser pasados a parseAddress
+        NOTA: Es la respuesta acertada pero no es sintacticamente correcta, pues el objeto "data" debe ser parseado con
+        mas rigor, el paso de "data" como argumento del método "parseAddress" devuelve un 'undefined'
+
+        OPCION D) *** INCORRECTA el uso de this en esta linea se refiere a $.get(...) por lo que no tiene un metodo "parseAddress"
+
+    </xmp>
+
+    <p>Para comprobar las respuestas, utilice los botones según las diferentes opciones y abra una consolo de depuración en su navegador F12 o CTRL+MAY+I</p>
+    <br />
+    <p>Podrá comprobar las justificaciones de las respuestas</p>
+    <br />
+    <button onclick="opcionA()">opcion A</button> <br />
+    <button onclick="opcionB()">opcion B</button> <br />
+    <button onclick="opcionC()">opcion C</button> <br />
+    <button onclick="opcionD()">opcion D</button> <br />
+
+    <p id="correcta">RESPUESTA CORRECTA C:=></p>
+   
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLFromDolarGet", "XMLFromDolarGet\XMLFromDolarGet.csproj", "{16859EC7-9BE6-4AB2-BD90-D7DDBA39DFBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16859EC7-9BE6-4AB2-BD90-D7DDBA39DFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16859EC7-9BE6-4AB2-BD90-D7DDBA39DFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16859EC7-9BE6-4AB2-BD90-D7DDBA39DFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16859EC7-9BE6-4AB2-BD90-D7DDBA39DFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16764174-A37F-4E0E-8666-FBB1F8961EDB}
+	EndGlobalSection
+EndGlobal
