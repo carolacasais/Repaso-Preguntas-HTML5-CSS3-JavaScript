@@ -1,1 +1,1 @@
-*****Esta solución corresponde a la pregunta 95.*****
+*******Esta solución corresponde a la pregunta 95.*******
