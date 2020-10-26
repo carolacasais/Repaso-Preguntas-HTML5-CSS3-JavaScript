@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta 163</title>
     <script type="text/javascript" src="jquery-3.5.1.min.js" ></script>
+    <script>
+        const itemsPerBox=10;
+
+        $(document).ready(function () {
+            $('#addBoxOfItems').click(function (event) {
+                alert("entre la 13 y la 15");
+    for (var i = 0; i < itemsPerBox; i++) {
+        $('#addOneItem').trigger('click');
+    }
+    })
+    });
+
+    </script>
 </head>
 <body>
     <h3>You develop and HTML5 webpage. You have the following HTML markup.<br/>
@@ -15,35 +28,34 @@ Which code segment should you add to the webpage?<br/>
 
 Total Products: <span id="products"></span>
 Total Boxes: <span id="boxes"></span>
-<input type="button" id="addOneItem" value="Add one item to the order"/>
+<input type="button" id="addOneItem" onclick="alert('llamada a addOneIte')" value="Add one item to the order"/>
 <input type="button" id="addBoxOfItems" value="Add a box to the order"/>
 
-<script>
+<xmp>
+$('#addBoxOfItems').on(function (event) {
+    for (var i = 0; i < itemsPerBox; i++) {
+        $('#addOneItem').trigger('click');
+    }
+}); 
 
-</script>
-// $('#addBoxOfItems').on(function (event) {
-    // for (var i = 0; i < itemsPerBox; i++) {
-        // $('#addOneItem').trigger('click');
-    // }
-// }); 
+$('#addBoxOfItems').click(function (event) {
+    for (var i = 0; i < itemsPerBox; i++) {
+        $('#addOneItem').click('click');
+    }
+/}); 
 
-// $('#addBoxOfItems').click(function (event) {
-    // for (var i = 0; i < itemsPerBox; i++) {
-        // $('#addOneItem').click('click');
-    //}
-// }); 
-
-// $('#addBoxOfItems').on(function (event) {
-    // for (var i = 0; i < itemsPerBox; i++) {
-        // $('#addOneItem').click();
-    // }
-// }); 
+$('#addBoxOfItems').on(function (event) {
+    for (var i = 0; i < itemsPerBox; i++) {
+        $('#addOneItem').click();
+    }
+}); 
 
 $('#addBoxOfItems').click(function (event) {
     for (var i = 0; i < itemsPerBox; i++) {
         $('#addOneItem').trigger('click');
     }
 });
+</xmp>
 
 </body>
 </html>
