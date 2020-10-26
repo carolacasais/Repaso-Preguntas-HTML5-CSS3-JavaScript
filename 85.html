@@ -6,6 +6,55 @@
     <title>Pregunta 85</title>
 </head>
 <body>
-    
+    <h4>You review code that uses WebSockets for a browser-based multiplayer game. Each player sends a move
+        to the server, which then sends the move to all connected game instances. The following code runs in the
+        browser and handles the sending and receiving of moves:</h4>
+
+        <xmp>
+            var moveList = new Array();
+            var myMoves = {};
+
+            var server = new WebSockets('ws://gameservere.proseware.com/');
+            server.onmessage = function(message) {
+                if (myMoves[message.data.id] == undefined)
+                moveList.push(message.data);
+            };
+
+            server.onopen = function() {
+                server.send(getUserName());
+            };
+            function sendMove() {
+                var nextMove = getMove();
+                myMoves[nextMove.id] = nextMove;
+                server.send(nextMove);
+            }
+        </xmp>
+
+        <h4>For each of the following statements, select Yes if the statement is true. Otherwise, select No. <br>
+            NOTE: Each correct selection is worth one point.
+        </h4>
+
+            var moveList = new Array();
+            var myMoves = {};
+
+            var server = new WebSockets('ws://gameservere.proseware.com/');
+            server.onmessage = function(message) {
+                if (myMoves[message.data.id] == undefined)
+                moveList.push(message.data);
+            };
+
+            server.onopen = function() {
+                server.send(getUserName());
+            };
+            function sendMove() {
+                var nextMove = getMove();
+                myMoves[nextMove.id] = nextMove;
+                server.send(nextMove);
+            }
+
+
+            <p>The moves are added to the moveList array in the order in which they were played. VERDADERO</p>
+            <P>The username is sent to the server before any moves are sent or received. VERDADERO</P>
+            <P>The player's own moves will be added to the moveList array FALSO</P>
 </body>
 </html>
