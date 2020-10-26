@@ -6,6 +6,85 @@
     <title>Pregunta 51</title>
 </head>
 <body>
-    
+    <h4>You are developing an application that consumes an external web service that returns the latest stock rate <br>
+        The application has two methods:<br>
+        The getResults() method makes an AJAX web service request<br>
+        The ShowRate() method displays the stock rate from the web service response<br>
+
+        You need to ensure that the ShowRate() method always displays the latest stock rate.<br>
+        Which code segment should you use?<br>
+    </h4>
+
+    <xmp>
+        A. function getResults(){
+            $.ajax({
+                type: 'GET',
+                cache: true,
+                url: "StockRates.asmx/GetRate",
+                data: ('StockName': stockName}
+                datatype: 'json',
+                success: function (result){
+                stockRate = result;
+                })
+                ShowRate();
+            }
+            function ShowRate() {
+                alert(stockRate);
+            }
+
+
+        B. var stockRate;
+        function getResults() {
+            $.ajax({
+                async: false
+                type: 'GET',
+                URL:"StockRates.asmx/GetRate",
+                data: ('StockName': stockname}
+                dataType: 'json',
+                success: function(result) {
+                    stockRate = result;
+                }})
+            ShowRate();
+            }
+            function ShowRate() {
+                alert(stockRate)
+            }
+
+
+        C. var stockRate;
+        function getResults() {
+            $.ajax({
+                async:true
+                type: 'GET',
+                url: "StockRates.asmx/GetRate",
+                data: ('StockName': stockName}
+                dataType: 'json'
+                success: function(result{
+                    stockRate = result;
+                }})
+                ShowRate();
+            }
+
+
+        D. var stockRate;
+        function getResults(){
+            $.ajax({
+                async: false;
+                cache: false,
+                type: 'GET',
+                url: "StockRates.asmx/GetRate",
+                data: ('StockName': stockName}
+                dataType: 'json',
+                success: function(reuslt){
+                    stockRate = result;
+                }})
+                ShowRate();
+            }
+    </xmp>
+
+    <p>RESPUESTA CORRECTA: D </p>
+    <p>EXPLICACION: Para que siempre se muestre el <strong>último stoke rate</strong> el cache tiene que ser false.</p>
+    <p>ENLACE DE REFERENCIA: https://api.jquery.com/jQuery.ajax/ </p>
+
 </body>
 </html>
