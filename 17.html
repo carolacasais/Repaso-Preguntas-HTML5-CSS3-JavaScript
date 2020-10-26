@@ -6,6 +6,58 @@
     <title>Pregunta 17</title>
 </head>
 <body>
-    
+    <h4>You are developing a web form that includes the following code.</h4>
+
+    <xmp>
+        <div id="dynamicForm">
+            <input type="checkbox" id="myCheckbox" onclick="ShowInputBox('dynamicForm');">
+        </div>
+    </xmp>
+
+    <h4>When a user selects the check box, an input text box must be added to the page dynamically.<br/>
+        You need to ensure that the text box is added.<br/>
+        Which function should you use?
+    </h4>
+
+    <xmp>
+        A. function ShowInputBox(divName)
+        {
+            var newInputDiv = document.createElement('div');
+            newInputDiv.innerHTML = "<input type='text' id='newInputBox'>";
+            document.getElementByID(newInputDiv).appendChild(divName);
+        }
+
+        B. function ShowInputBox(divName)
+        {
+            var newInputDiv = document.createElement('div');
+            newInputDiv.innerHTML = "<input type='text' id='newInputBox'>";
+            document.getElementByID(divName).appendChild(newInputDiv);
+        }
+
+        C. function ShowInputBox(divName)
+        {
+            var newInputDiv = document.createElement('div');
+            newInputDiv.innerHTML = "<input type='text' id='newInputBox'>";
+            document.getElementByID(divName).applyElement(newInputDiv);
+        }
+
+        D. function ShowInputBox(divName)
+        {
+            var newInputDiv = document.createElement('div');
+            newInputDiv.innerHTML = "<input type='text' id='newInputBox'>";
+            document.getElementByID(newInputDiv).applyElement(divName);
+        }
+    </xmp>
+
+    <div id="dynamicForm">
+        <input type="checkbox" id="myCheckbox" onclick="ShowInputBox('dynamicForm');">
+    </div>
+
+    function ShowInputBox(divName)
+        {
+            var newInputDiv = document.createElement('div');
+            newInputDiv.innerHTML = "<input type='text' id='newInputBox'>";
+            document.getElementByID(divName).appendChild(newInputDiv);
+        }
 </body>
 </html>
